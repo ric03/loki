@@ -225,7 +225,8 @@ spec:
       {{- end }}
       volumes:
         - name: tmp
-          emptyDir: {}
+          emptyDir:
+            {{- toYaml .Values.backend.emptyDirVolumeParameters | nindent 12 }}
         {{- if not .Values.backend.persistence.volumeClaimsEnabled }}
         - name: data
         {{- toYaml .Values.backend.persistence.dataVolumeParameters | nindent 10 }}

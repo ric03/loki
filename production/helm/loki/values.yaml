@@ -993,6 +993,8 @@ read:
   legacyReadTarget: false
   # -- Additional CLI args for the read
   extraArgs: []
+  # -- Parameter used to configure the `emptyDir` volumes
+  emptyDirVolumeParameters: {}
   # -- Environment variables to add to the read pods
   extraEnv: []
   # -- Environment variables from secrets or configmaps to add to the read pods
@@ -1092,6 +1094,8 @@ backend:
     labels: {}
   # -- Comma-separated list of Loki modules to load for the read
   targetModule: "backend"
+  # -- Parameter used to configure the `emptyDir` volumes
+  emptyDirVolumeParameters: {}
   # -- Additional CLI args for the backend
   extraArgs: []
   # -- Environment variables to add to the backend pods
@@ -1186,6 +1190,8 @@ singleBinary:
     labels: {}
   # -- Comma-separated list of Loki modules to load for the single binary
   targetModule: "all"
+  # -- Parameter used to configure the `emptyDir` volumes
+  emptyDirVolumeParameters: {}
   # -- Labels for single binary service
   extraArgs: []
   # -- Environment variables to add to the single binary pods
@@ -1347,6 +1353,8 @@ gateway:
   extraEnvFrom: []
   # -- Lifecycle for the gateway container
   lifecycle: {}
+  # -- Parameter used to configure the `emptyDir` volumes
+  emptyDirVolumeParameters: {}
   # -- Volumes to add to the gateway pods
   extraVolumes: []
   # -- Volume mounts to add to the gateway pods

@@ -129,9 +129,11 @@ spec:
             secretName: {{ include "loki.gatewayAuthSecret" . }}
         {{- end }}
         - name: tmp
-          emptyDir: {}
+          emptyDir:
+            {{- toYaml .Values.gateway.emptyDirVolumeParameters | nindent 12 }}
         - name: docker-entrypoint-d-override
-          emptyDir: {}
+          emptyDir:
+            {{- toYaml .Values.gateway.emptyDirVolumeParameters | nindent 12 }}
         {{- if .Values.gateway.extraVolumes }}
         {{- toYaml .Values.gateway.extraVolumes | nindent 8 }}
         {{- end }}

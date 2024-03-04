@@ -151,7 +151,8 @@ spec:
       {{- end }}
       volumes:
         - name: tmp
-          emptyDir: {}
+          emptyDir:
+            {{- toYaml .Values.singleBinary.emptyDirVolumeParameters | nindent 12 }}
         - name: config
           {{- if .Values.loki.existingSecretForConfig }}
           secret:
